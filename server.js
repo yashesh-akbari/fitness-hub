@@ -40,9 +40,55 @@ app.use(scheduleRoute);
 app.use(blogsRoute);
 app.use(services);
 
-app.get("/",(req,res)=>{
-  res.send("Hello User,Api you can test on postmen,thunder client");
-})
+// app.get("/",(req,res)=>{
+//   res.send(`<h1>Hello User,Api you can test on postmen,thunder client</h1>`);
+// })
+
+app.get("/", (req, res) => {
+  res.send(`
+    <html>
+      <head>
+        <title>Gym API</title>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            padding: 40px;
+          }
+          h1 {
+            color: #0070f3;
+          }
+          ul {
+            margin-top: 20px;
+          }
+          li {
+            margin: 10px 0;
+          }
+          code {
+            background: #eaeaea;
+            padding: 2px 6px;
+            border-radius: 4px;
+          }
+        </style>
+      </head>
+      <body>
+        <h1>👋 Welcome to the Gym API</h1>
+        <p>You can test the following API endpoints using <strong>Postman</strong> or <strong>Thunder Client</strong>:</p>
+        <ul>
+          <li><code>GET /api/blogs</code></li>
+          <li><code>GET /api/trainers</code></li>
+          <li><code>GET /api/schedule</code></li>
+          <li><code>GET /api/pricing-plans</code></li>
+          <li><code>GET /api/testimonials</code></li>
+          <li><code>GET /api/classes</code></li>
+          <li><code>GET /api/services</code></li>
+        </ul>
+        <p>Happy testing! 💪</p>
+      </body>
+    </html>
+  `);
+});
 // Start Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
