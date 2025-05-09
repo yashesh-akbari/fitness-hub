@@ -85,6 +85,7 @@ app.get("/", (req, res) => {
           <li><code>GET /api/services</code></li>
         </ul>
         <p>Happy testing! 💪</p>
+        <p>@2025 yashesh Akbari copyright 
       </body>
     </html>
   `);
