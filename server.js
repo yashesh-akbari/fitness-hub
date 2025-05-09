@@ -40,6 +40,9 @@ app.use(scheduleRoute);
 app.use(blogsRoute);
 app.use(services);
 
+app.get("/",(req,res)=>{
+  res.send("Hello User,Api you can test on postmen,thunder client");
+})
 // Start Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
